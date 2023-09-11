@@ -1,0 +1,13 @@
+<form #formCtrl="ngForm">
+  Modèle <input name="modele" #modeleCtrl="ngModel" required [(ngModel)]="v1.modele">
+
+  <p *ngIf="modeleCtrl.dirty && modeleCtrl.invalid"> Modèle invalide</p>
+
+  Marque <input name="marque" #marqueCtrl="ngModel" required minlength="2" [(ngModel)]="v1.marque">
+
+  <p *ngIf="modeleCtrl.dirty && marqueCtrl.invalid"> Marque invalide</p>
+
+  <button (click)="ajouter()">Ajouter</button>
+  <p *ngIf="formCtrl.dirty && formCtrl.invalid"> Formulaire invalide</p>
+
+</form>
